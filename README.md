@@ -3,6 +3,7 @@ ACEDrawingView
 
 > **Note**: これは [acerbetti/ACEDrawingView](https://github.com/acerbetti/ACEDrawingView) のフォークです。
 > オリジナルのリポジトリはメンテナンスされていないため、このフォークを [miraikoji-ios](https://github.com/miraikoji/miraikoji-ios) で使用しています。
+
 [![Build Status](https://github.com/acerbetti/ACEDrawingView/workflows/ACEDrawingView%20CI/badge.svg?branch=master)](https://github.com/acerbetti/ACEDrawingView/actions) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/ACEDrawingView.svg)](http://cocoadocs.org/docsets/ACEDrawingView) [![Platform](https://img.shields.io/cocoapods/p/ACEDrawingView.svg?style=flat)](http://cocoadocs.org/docsets/ACEDrawingView)
 
 See it in action
