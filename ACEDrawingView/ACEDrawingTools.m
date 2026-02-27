@@ -522,6 +522,20 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     CGContextMoveToPoint(context, p1.x, p1.y);
     CGContextAddLineToPoint(context, self.lastPoint.x + endPointOffset.x, self.lastPoint.y + endPointOffset.y);
     CGContextAddLineToPoint(context, p2.x, p2.y);
+  
+    if (self.drawArrowAtStart) {
+        CGFloat reverseAngle = angle + M_PI;
+        CGPoint p1 = [self pointWithAngle:reverseAngle + 7.0f * M_PI / 8.0f distance:capHeight];
+        CGPoint p2 = [self pointWithAngle:reverseAngle - 7.0f * M_PI / 8.0f distance:capHeight];
+        CGPoint offset = [self pointWithAngle:reverseAngle distance:self.lineWidth];
+     
+        p1 = CGPointMake(self.firstPoint.x + p1.x, self.firstPoint.y + p1.y);
+        p2 = CGPointMake(self.firstPoint.x + p2.x, self.firstPoint.y + p2.y);
+     
+        CGContextMoveToPoint(context, p1.x, p1.y);
+        CGContextAddLineToPoint(context, self.firstPoint.x + offset.x, self.firstPoint.y + offset.y);
+        CGContextAddLineToPoint(context, p2.x, p2.y);
+    }
     
     CGContextStrokePath(context);
 }

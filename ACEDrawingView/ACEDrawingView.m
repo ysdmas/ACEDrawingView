@@ -258,6 +258,13 @@
             return ACE_AUTORELEASE([ACEDrawingArrowTool new]);
         }
             
+        case ACEDrawingToolTypeDoubleArrow:
+        {
+            ACEDrawingArrowTool *tool = [ACEDrawingArrowTool new];
+            tool.drawArrowAtStart = YES;
+            return ACE_AUTORELEASE(tool);
+        }
+            
         case ACEDrawingToolTypeDraggableText:
         {
             ACEDrawingDraggableTextTool *tool = ACE_AUTORELEASE([ACEDrawingDraggableTextTool new]);

@@ -124,6 +124,7 @@
 #pragma mark -
 
 @interface ACEDrawingArrowTool : NSObject<ACEDrawingTool>
+@property (nonatomic, assign) BOOL drawArrowAtStart;
 @end
 
 
