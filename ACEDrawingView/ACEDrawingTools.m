@@ -523,7 +523,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     CGContextAddLineToPoint(context, self.lastPoint.x + endPointOffset.x, self.lastPoint.y + endPointOffset.y);
     CGContextAddLineToPoint(context, p2.x, p2.y);
   
-    if (self.drawArrowAtStart) {
+    if (self.startStyle == ACEDrawingArrowStartStyleArrow) {
         CGFloat reverseAngle = angle + M_PI;
         CGPoint p1 = [self pointWithAngle:reverseAngle + 7.0f * M_PI / 8.0f distance:capHeight];
         CGPoint p2 = [self pointWithAngle:reverseAngle - 7.0f * M_PI / 8.0f distance:capHeight];
@@ -538,6 +538,18 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     }
     
     CGContextStrokePath(context);
+  
+    if (self.startStyle == ACEDrawingArrowStartStyleCircle) {
+        CGFloat radius = self.lineWidth * 2.0f;
+        CGRect circleRect = CGRectMake(self.firstPoint.x - radius,
+                                       self.firstPoint.y - radius,
+                                       radius * 2,
+                                       radius * 2);
+        CGContextSetFillColorWithColor(context, self.lineColor.CGColor);
+        CGContextSetAlpha(context, self.lineAlpha);
+        CGContextAddEllipseInRect(context, circleRect);
+        CGContextFillPath(context);
+    }
 }
 
 - (ACEDrawingToolState *)captureToolState

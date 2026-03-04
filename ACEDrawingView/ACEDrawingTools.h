@@ -123,8 +123,14 @@
 
 #pragma mark -
 
+typedef enum {
+    ACEDrawingArrowStartStyleNone,
+    ACEDrawingArrowStartStyleArrow,
+    ACEDrawingArrowStartStyleCircle,
+} ACEDrawingArrowStartStyle;
+
 @interface ACEDrawingArrowTool : NSObject<ACEDrawingTool>
-@property (nonatomic, assign) BOOL drawArrowAtStart;
+@property (nonatomic, assign) ACEDrawingArrowStartStyle startStyle;
 @end
 
 

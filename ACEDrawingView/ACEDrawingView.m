@@ -261,10 +261,17 @@
         case ACEDrawingToolTypeDoubleArrow:
         {
             ACEDrawingArrowTool *tool = [ACEDrawingArrowTool new];
-            tool.drawArrowAtStart = YES;
+            tool.startStyle = ACEDrawingArrowStartStyleArrow;
             return ACE_AUTORELEASE(tool);
         }
             
+        case ACEDrawingToolTypeCircleArrow:
+        {
+            ACEDrawingArrowTool *tool = [ACEDrawingArrowTool new];
+            tool.startStyle = ACEDrawingArrowStartStyleCircle;
+            return ACE_AUTORELEASE(tool);
+        }
+          
         case ACEDrawingToolTypeDraggableText:
         {
             ACEDrawingDraggableTextTool *tool = ACE_AUTORELEASE([ACEDrawingDraggableTextTool new]);
